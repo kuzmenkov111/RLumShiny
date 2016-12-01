@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rlumshiny by tzerk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Rlumshiny</h1>
+      <h2 class="project-tagline">A collection of shiny applications for the R package Luminescence.</h2>
+      <a href="https://github.com/tzerk/RLumShiny" class="btn">View on GitHub</a>
+      <a href="https://github.com/tzerk/RLumShiny/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/tzerk/RLumShiny/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="rlumshiny" class="anchor" href="#rlumshiny" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>RLumShiny</h1>
+
+<p><a href="http://cran.rstudio.com/package=RLumShiny"><img src="http://www.r-pkg.org/badges/version/RLumShiny" alt="CRAN"></a>
+<a href="http://www.r-pkg.org/pkg/RLumShiny"><img src="http://cranlogs.r-pkg.org/badges/grand-total/RLumShiny" alt="Downloads"></a>
+<a href="http://www.r-pkg.org/pkg/RLumShiny"><img src="http://cranlogs.r-pkg.org/badges/RLumShiny" alt="Downloads"></a>
+<a href="http://www.r-pkg.org/pkg/RLumShiny"><img src="http://cranlogs.r-pkg.org/badges/last-week/RLumShiny" alt="Downloads"></a>
+<a href="http://www.r-pkg.org/pkg/RLumShiny"><img src="http://cranlogs.r-pkg.org/badges/last-day/RLumShiny" alt="Downloads"></a></p>
+
+<p><a href="https://ci.appveyor.com/project/tzerk/rlumshiny/branch/master"><img src="https://ci.appveyor.com/api/projects/status/jp8ueedudbuhvtfe/branch/master?svg=true" alt="Build status"></a>
+<a href="https://travis-ci.org/tzerk/RLumShiny"><img src="https://travis-ci.org/tzerk/RLumShiny.svg?branch=master" alt="Build Status"></a></p>
+
+<blockquote>
+<p>Follow us on <a href="http://www.twitter.com/RLuminescence"><img src="http://i.imgur.com/wWzX9uB.png" alt="alt text" title="twitter icon without padding"></a> <a href="http://www.twitter.com/RLuminescence">@RLuminescence</a></p>
+</blockquote>
+
+<p>A collection of <code>shiny</code> applications for the R package <code>Luminescence</code>. These mainly, but not exclusively, include applications for plotting chronometric data from e.g. luminescence or radiocarbon dating. It further provides access to twitter bootstraps tooltip and popover functionality and contains the <a href="http://jscolor.com/">jscolor.js library</a> with a custom <code>shiny</code> output binding.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>To install the stable version from CRAN, simply run the following from an R console:</p>
+
+<div class="highlight highlight-source-r"><pre>install.packages(<span class="pl-s"><span class="pl-pds">"</span>RLumShiny<span class="pl-pds">"</span></span>)</pre></div>
+
+<p>To install the latest development builds directly from GitHub, run</p>
+
+<div class="highlight highlight-source-r"><pre><span class="pl-k">if</span> (<span class="pl-k">!</span>require(<span class="pl-s"><span class="pl-pds">"</span>devtools<span class="pl-pds">"</span></span>))
+  install.packages(<span class="pl-s"><span class="pl-pds">"</span>devtools<span class="pl-pds">"</span></span>)
+<span class="pl-e">devtools</span><span class="pl-k">::</span>install_github(<span class="pl-s"><span class="pl-pds">"</span>tzerk/RLumShiny@master<span class="pl-pds">"</span></span>)</pre></div>
+
+<h2>
+<a id="applications" class="anchor" href="#applications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Applications</h2>
+
+<p>The RLumShiny package provides a single function from which all apps can be started: <code>app_RLum()</code>. It essentially only takes one argument, which is a unique keyword to specify which app to start. See the table below for a list of available apps and which keywords to use.</p>
+
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Keyword</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abanico Plot</td>
+<td>abanico</td>
+<td><code>plot_AbanicoPlot</code></td>
+</tr>
+<tr>
+<td>Histogram</td>
+<td>histogram</td>
+<td><code>plot_Histogram</code></td>
+</tr>
+<tr>
+<td>Kernel Density Estimate Plot</td>
+<td>KDE</td>
+<td><code>plot_KDE</code></td>
+</tr>
+<tr>
+<td>Radial Plot</td>
+<td>radialplot</td>
+<td><code>plot_RadialPlot</code></td>
+</tr>
+<tr>
+<td>Dose Recovery Test</td>
+<td>doserecovery</td>
+<td><code>plot_DRTResults</code></td>
+</tr>
+<tr>
+<td>Cosmic Dose Rate</td>
+<td>cosmicdose</td>
+<td><code>calc_CosmicDoseRate</code></td>
+</tr>
+<tr>
+<td>CW Curve Transformation</td>
+<td>transformCW</td>
+<td>
+<code>CW2pHMi</code>, <code>CW2pLM</code>, <code>CW2pLMi</code>, <code>CW2pPMi</code>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>The <code>app_RLum()</code> function is just a wrapper for <code>shiny::runApp()</code>. Via the <code>...</code> argument further arguments can be directly passed to <code>shiny::runApp()</code>. See <code>?shiny::runApp</code> for further details on valid arguments.</p>
+
+<h2>
+<a id="extending-shiny" class="anchor" href="#extending-shiny" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extending Shiny</h2>
+
+<p>In addition to its main purpose of providing convenient access to the Luminescence shiny applications this package also provides further functions to extend the functionality of <code>shiny</code>. From the Bootstrap framework the JavaScript tooltip and popover components can be added to any shiny application via <code>tooltip()</code> and <code>popover()</code>.</p>
+
+<p>It further provides a custom input binding to the JavaScript/HTML color picker <a href="http://jscolor.com">JSColor</a>. Offering access to most options provided by the JSColor API the function <code>jscolorInput()</code> is easily implemented in a shiny app. RGB colors are returned as hex values and can be directly used in <strong>R</strong>'s base plotting functions without requiring any format conversion.</p>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+
+<h3>
+<a id="abanico-plot-app" class="anchor" href="#abanico-plot-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abanico Plot app</h3>
+
+<p><code>app_RLum("abanico")</code></p>
+
+<p><img src="http://zerk.canopus.uberspace.de/img/github/abanicoApp.png"></p>
+
+<h3>
+<a id="tooltip" class="anchor" href="#tooltip" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tooltip</h3>
+
+<p><code>tooltip(refId, text, attr = NULL, animation = TRUE, delay = 100, html = TRUE, placement = "auto", trigger = "hover")</code></p>
+
+<p><img src="http://zerk.canopus.uberspace.de/img/github/tooltip.png"></p>
+
+<h3>
+<a id="jscolor" class="anchor" href="#jscolor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JSColor</h3>
+
+<p><code>jscolorInput(inputId, label, value, position = "bottom", color = "transparent", mode = "HSV", slider = TRUE, close = FALSE)</code></p>
+
+<p><img src="http://zerk.canopus.uberspace.de/img/github/JSColor.png"></p>
+
+<h2>
+<a id="contribute" class="anchor" href="#contribute" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contribute</h2>
+
+<p>This package is part of the R Luminescence project. The is based on and evolves from ideas, contributions and constructive criticism of its users. Help us to maintain and develop the package, to find bugs and create new functions as well as a user-friendly design. Visit our <a href="https://forum.r-luminescence.de">message board</a> or write us an <a href="mailto:team@r-luminescence.de">e-mail</a> if anything crosses your mind or if you want your new self-written shiny application to be to implemented. You are kindly invited to bring forward the package with us!</p>
+
+<h2>
+<a id="note" class="anchor" href="#note" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Note</h2>
+
+<p>This version is a development version and it comes without any guarentee! For stable branches please visit
+the package on <a href="http://cran.r-project.org/web/packages/RLumShiny/index.html">CRAN 'RLumShiny'</a>.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>The RLumShiny package is licensed under the GPLv3. See these files in the main directory for additional details: </p>
+
+<ul>
+<li>LICENSE.note</li>
+</ul>
+
+<h2>
+<a id="related-projects" class="anchor" href="#related-projects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Related projects</h2>
+
+<ul>
+<li><a href="https://github.com/R-Lum/RLumModel">RLumModel</a></li>
+<li><a href="https://github.com/R-Lum/Luminescence">Luminescence</a></li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/tzerk/RLumShiny">Rlumshiny</a> is maintained by <a href="https://github.com/tzerk">tzerk</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
